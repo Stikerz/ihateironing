@@ -1,0 +1,124 @@
+{% include 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h4>Winterfell Dry Cleaners</h4><br>
+
+    <div id="drycleaning">
+
+        <form class="form-inline" @submit.prevent="getOrder">
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="orderid" class="sr-only">Order ID</label>
+                <input type="text" class="form-control" id="orderid"
+                       placeholder="Order ID"
+                       v-model="orderId">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Display
+            </button>
+            <div v-if="warning" class="form-group mb-2">
+                <label for="Warningtext" class="sr-only">Email</label>
+                <input type="text" readonly
+                       class="form-control-plaintext text-danger"
+                       id="Warningtext" value="Order ID does not exist">
+            </div>
+        </form>
+        <br>
+        <h6>Order: [[ orderId ]]</h6>
+        <h6>Customer: [[ customer ]]</h6>
+        <h6>Date: [[ date ]]</h6>
+        <br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="order in orders">
+                <td>[[ order.item_id.name ]]</td>
+                <td>£[[ order.item_id.price ]]</td>
+                <td>[[ order.quantity ]]</td>
+                <td>£[[ order.price ]]</td>
+            </tr>
+            <tr>
+                <td><b>Total</b></td>
+                <td></td>
+                <td></td>
+                <td v-if="show">£[[ orders[0].vat_breakdown.GROSS ]]</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <h6>VAT Breakdown</h6>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Net</th>
+                <th scope="col">VAT @ 20%</th>
+                <th scope="col">Gross</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-if="show">
+                <td>£[[ orders[0].vat_breakdown.NET ]]</td>
+                <td>£[[ orders[0].vat_breakdown.VAT ]]</td>
+                <td>£[[ orders[0].vat_breakdown.GROSS ]]</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+
+    </div>
+    <script>
+
+        var app = new Vue({
+            delimiters: ['[[', ']]'],
+            el: '#drycleaning',
+            data: {
+                students: {},
+                url: 'http://127.0.0.1:8000/drycleaning/lineitems/',
+                orders: [],
+                orderId: '',
+                show: false,
+                warning: false,
+                customer: '',
+                date: '',
+
+            },
+            methods: {
+                getOrder: function () {
+                    if (this.orderId.trim() !== '') {
+                        axios.get(`${this.url}?search=${this.orderId}`).then(function
+                            (response) {
+                            this.orders = response.data;
+                            if (this.orders.length > 0) {
+                                this.show = true;
+                                this.warning = false;
+                                this.customer =
+                                    this.orders[0].order_id.customer_name;
+                                this.date = this.orders[0].order_id.created_at;
+
+                            } else {
+                                this.show = false;
+                                this.warning = true;
+                                this.orders = [];
+                                this.customer = '';
+                                this.date = '';
+
+                            }
+                        }.bind(this));
+                    } else {
+                        this.show = false;
+                        this.orders = [];
+                    }
+                },
+            },
+        });
+    </script>
+</div>
+{% endblock %}
