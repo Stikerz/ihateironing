@@ -1,0 +1,43 @@
+[
+  {
+    "model": "drycleaning.lineitem",
+    "pk": 1,
+    "fields": {
+      "order_id": 1,
+      "item_id": 1,
+      "quantity": 2,
+      "price": 49.98
+    }
+  },
+    {
+    "model": "drycleaning.lineitem",
+    "pk": 2,
+    "fields": {
+      "order_id": 1,
+      "item_id": 2,
+      "quantity": 1,
+      "price": 12.00
+    }
+  }
+  ,
+    {
+    "model": "drycleaning.lineitem",
+    "pk": 3,
+    "fields": {
+      "order_id": 1,
+      "item_id": 3,
+      "quantity": 1,
+      "price": 32.72
+    }
+  },
+    {
+    "model": "drycleaning.lineitem",
+    "pk": 4,
+    "fields": {
+      "order_id": 1,
+      "item_id": 4,
+      "quantity": 6,
+      "price": 21.36
+    }
+  }
+]

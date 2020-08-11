@@ -1,0 +1,37 @@
+[
+  {
+    "model": "drycleaning.item",
+    "pk": 1,
+    "fields": {
+      "name": "Cloak",
+      "price": 12.00
+    }
+  },
+    {
+    "model": "drycleaning.item",
+    "pk": 2,
+    "fields": {
+      "name": "Wool sweater",
+      "price": 24.99
+    }
+  },
+  {
+    "model": "drycleaning.item",
+    "pk": 3,
+    "fields": {
+      "name": "Waistcoat",
+      "price": 16.36
+    }
+  },
+  {
+    "model": "drycleaning.item",
+    "pk": 4,
+    "fields": {
+      "name": "Socks",
+      "price": 3.56
+    }
+  }
+
+
+
+]

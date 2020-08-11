@@ -1,0 +1,9 @@
+[
+  {
+    "model": "drycleaning.order",
+    "pk": 1,
+    "fields": {
+      "customer_name": "Jane Smith"
+    }
+  }
+]
