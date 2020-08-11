@@ -36,18 +36,18 @@ Name                              Stmts   Miss  Cover   Excluded
 ---------------------------------------------------------------
 drycleaning/__init__.py	              0	     0	 100%    0
 drycleaning/admin.py	              1	     0	 100%    0
-drycleaning/models.py	              33	 0	 100%    4
-drycleaning/serializers.py	          19	 0	 100%    0
-drycleaning/tests/test_models.py	  34	 0	 100%    0
-drycleaning/tests/test_views.py	      52	 0	 100%    0
-drycleaning/urls.py	                  3	     0	 100%    0
-drycleaning/views.py	              15	 0	 100%    0
+drycleaning/models.py	              33     0	 100%    4
+drycleaning/serializers.py	      19     0	 100%    0
+drycleaning/tests/test_models.py      34     0	 100%    0
+drycleaning/tests/test_views.py	      52     0	 100%    0
+drycleaning/urls.py	              3	     0	 100%    0
+drycleaning/views.py	              15     0	 100%    0
 winterfell/__init__.py	              0	     0	 100%    0
-winterfell/settings.py	              18	 0	 100%    0
-winterfell/tests.py	                  7      0	 100%    0
-winterfell/urls.py	                  4	     0	 100%    0
-winterfell/views.py	                  4		 0	 100%    0
+winterfell/settings.py	              18     0	 100%    0
+winterfell/tests.py	              7      0	 100%    0
+winterfell/urls.py	              4	     0	 100%    0
+winterfell/views.py	              4	     0	 100%    0
 ---------------------------------------------------------------
-TOTAL                               190      0    100%   4
+TOTAL                               190      0   100%   4
 
 ```
