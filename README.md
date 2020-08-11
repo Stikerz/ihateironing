@@ -13,7 +13,7 @@ This project was written using python3.7. A pip requirements.txt
  
 - Build & Run the image: `docker-compose up --build`
 
-- Start using web app: `http://localhost:8080/`
+- Start using web app: `http://http://127.0.0.1:8000/`
 
 ## Project Structure Notes
 
