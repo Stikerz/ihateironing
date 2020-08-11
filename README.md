@@ -22,7 +22,10 @@ This project was written using python3.7. A pip requirements.txt
 - Project uses Postgres with DB info hardcoded  in `winterfell/settings` for
  dev purposes only ( store sensitive data are either with environment
   variables or via a json file in production)
-- Currently API is for retrieving only as instructed with task 
+- Currently API is for retrieving only as instructed with task
+- Django server 'runserver' for dev purposes only, server such a gunicorn for
+ prod
+ - fixtures to load database with initial data (use tool such celery for prod) 
 
 ## API Endpoints
 - Retrieve Orders : /drycleaning/orders/ 
